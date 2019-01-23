@@ -3,7 +3,7 @@ package com.rixonsoft.brucielib.client;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import com.rixonsoft.brucielib.TestGame;
+import com.rixonsoft.brucielib.test.TestGame;
 
 public class HtmlLauncher extends GwtApplication {
 
