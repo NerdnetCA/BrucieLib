@@ -6,7 +6,7 @@ import com.rixonsoft.brucielib.BundledAsset;
 
 public enum TestBundle implements BundledAsset {
 
-    DEFAULTSKIN("brucie/ui/ctulublu_ui.json",Skin.class),
+    DEFAULTSKIN("brucie/ui/cuticle_alphablue.json",Skin.class),
     BRUCIELOGO("brucie/logo.png",Texture.class)
     ;
 

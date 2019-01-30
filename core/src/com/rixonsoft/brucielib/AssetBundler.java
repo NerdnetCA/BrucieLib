@@ -21,6 +21,10 @@ public class AssetBundler<T extends BundledAsset> implements Disposable, Wrangle
         return assetManager.get(a.getAssetName(),a.getAssetClass());
     }
 
+    public <T> T getAsset(BundledAsset a, Class<T> type) {
+        return assetManager.get(a.getAssetName(),type);
+    }
+
     @Override
     public void dispose() {
         for (Object o : myBundle.getValues()) {
@@ -36,6 +40,6 @@ public class AssetBundler<T extends BundledAsset> implements Disposable, Wrangle
 
     @Override
     public void setGame(BrucieGame game) {
-        this.brucieGame = brucieGame;
+        this.brucieGame = game;
     }
 }
