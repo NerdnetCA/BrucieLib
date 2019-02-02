@@ -50,6 +50,7 @@ public class TestScene extends Scene {
         stage = new Stage(vp,batch);
         Gdx.input.setInputProcessor(stage);
 
+
         Button b = new TextButton("Button",skin);
         b.addListener(new ChangeListener() {
             @Override
@@ -93,6 +94,8 @@ public class TestScene extends Scene {
         if(batch != null) batch.dispose();
         super.dispose();
     }
+
+
     @Override
     public void pause() {
 

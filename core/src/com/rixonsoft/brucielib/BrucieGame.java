@@ -5,7 +5,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ai.fsm.DefaultStateMachine;
 import com.badlogic.gdx.ai.fsm.StateMachine;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 
 public abstract class BrucieGame implements ApplicationListener {
     private static final String TAG = "BRUCIEGAME";
@@ -28,6 +31,10 @@ public abstract class BrucieGame implements ApplicationListener {
     public void create() {
         brucieConfig = new BrucieConfig();
         assetManager = new AssetManager();
+        assetManager.setLoader(
+                TiledMap.class,
+                new TmxMapLoader(new InternalFileHandleResolver())
+        );
         gameStateMachine =
                 new DefaultStateMachine<BrucieGame, GameState>(this, GameState.BOOTSPLASH);
 
