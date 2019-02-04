@@ -2,31 +2,25 @@ package com.rixonsoft.brucielib.test;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.rixonsoft.brucielib.BundledAsset;
+import com.rixonsoft.brucielib.AssetBag;
 
-public enum TestBundle implements BundledAsset {
+public class TestBundle extends AssetBag {
 
-    DEFAULTSKIN("brucie/ui/cuticle_alphablue.json",Skin.class),
-    BRUCIELOGO("brucie/logo.png",Texture.class)
-    ;
+    private static final String DEFAULTSKIN = "brucie/ui/cuticle_alphablue.json";
+    private static final String BRUCIELOGO = "brucie/logo.png";
 
-    private final String path;
-    private final Class claz;
+    public Skin defaultSkin;
+    public Texture brucieLogo;
 
-    TestBundle(String path, Class clazz) {
-        this.path = path;
-        this.claz = clazz;
+    @Override
+    public void resolveAssets() {
+        defaultSkin = assetManager.get(DEFAULTSKIN,Skin.class);
+        brucieLogo = assetManager.get(BRUCIELOGO,Texture.class);
     }
 
-    public String getAssetName() {
-        return this.path;
-    }
-
-    public Class getAssetClass() {
-        return this.claz;
-    }
-
-    public Object[] getValues() {
-        return TestBundle.values();
+    @Override
+    public void queueAssets() {
+        assetManager.load(DEFAULTSKIN,Skin.class);
+        assetManager.load(BRUCIELOGO, Texture.class);
     }
 }

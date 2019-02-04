@@ -1,10 +1,11 @@
-package com.rixonsoft.brucielib;
+package com.rixonsoft.brucielib.boot;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.rixonsoft.brucielib.BasicFadeyScene;
 
 
 /**
@@ -14,7 +15,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  *
  */
 
-public class SplashScreen extends Scene {
+public class SplashScreen extends BasicFadeyScene {
     private static final String TAG = "SPLASH";
 
     // Const
@@ -33,11 +34,12 @@ public class SplashScreen extends Scene {
 
     @Override
     public void preload() {
-        loadAsset("brucie/splash.png",Texture.class);
+        myGame.assetManager.load("brucie/splash.png",Texture.class);
     }
     @Override
     public void dispose() {
-        myBatch.dispose();
+        if(myBatch != null) myBatch.dispose();
+        myGame.assetManager.unload("brucie/splash.png");
         super.dispose();
     }
 
@@ -47,8 +49,8 @@ public class SplashScreen extends Scene {
     }
 
     @Override
-    public void start() {
-
+    public void show() {
+        super.show();
         myCamera = new OrthographicCamera();
         myCamera.setToOrtho(false,F_WIDTH,F_HEIGHT);
         myBatch = new SpriteBatch();

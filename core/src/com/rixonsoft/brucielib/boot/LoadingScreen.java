@@ -1,4 +1,4 @@
-package com.rixonsoft.brucielib;
+package com.rixonsoft.brucielib.boot;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
@@ -6,13 +6,15 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.rixonsoft.brucielib.BasicFadeyScene;
+import com.rixonsoft.brucielib.BrucieConfig;
 
 /**
  * As with SplashScreen, it is best to keep out of this and accept that it works. :)
  *
  */
 
-public class LoadingScreen extends Scene {
+public class LoadingScreen extends BasicFadeyScene {
     private static final String TAG="LOADINGSCREEN";
 
     private Texture loadingImg;
@@ -22,10 +24,11 @@ public class LoadingScreen extends Scene {
     private float myX, myY;
 
     @Override
-    public void start() {
+    public void show() {
+        super.show();
         Gdx.app.log(TAG,"Show loading screen");
         AssetManager am = myGame.assetManager;
-        loadingImg = am.get("brucie/loading.png",Texture.class);
+        loadingImg = am.get(BrucieConfig.loading_img,Texture.class);
 
         myX = 400f-loadingImg.getWidth()/2f;
         myY = 240f-loadingImg.getHeight()/2f;
@@ -35,6 +38,7 @@ public class LoadingScreen extends Scene {
         myCam.update();
         myBatch = new SpriteBatch();
         myBatch.setProjectionMatrix(myCam.combined);
+        wrangler.add(myBatch);
     }
 
     public boolean isDone() { return true; }
@@ -43,12 +47,6 @@ public class LoadingScreen extends Scene {
     @Override
     public void preload() {
         return;
-    }
-    @Override
-    public void dispose() {
-        Gdx.app.log(TAG,"Disposing Scene");
-        myBatch.dispose();
-        super.dispose();
     }
 
     @Override
