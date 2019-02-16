@@ -1,4 +1,5 @@
 
+
 varying vec4 v_color;
 varying vec2 v_texCoord0;
 
@@ -28,16 +29,21 @@ vec3 hsv2rgb(vec3 c)
 }
 
 /* Basic value and saturation modifier.
- Note: as with many of my shaders, I'm throwing away the alpha
- channel. This is usually fine, since I apply these to a framebuffer,
- but this should be kept in mind when adapting this shader to other uses.
+
  */
 void main() {
+
+
     vec2 tc = v_texCoord0;
-    vec3 col = texture2D(u_texture, tc).rgb;
+    vec4 color_in = texture2d(u_texture, tc);
+
+    vec3 col = color_in.rgb;
+
     vec3 hsv = rgb2hsv(col);
     hsv.y *= gray;
     hsv.z *= brite;
     col = hsv2rgb(hsv);
-    gl_FragColor = vec4(col,1.0);
+
+
+    gl_FragColor = vec4(col,color_in.a);
 }
