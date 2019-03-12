@@ -5,25 +5,25 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.rixonsoft.brucielib.BasicFadeyScene;
+import com.rixonsoft.brucielib.scene.BasicScene;
 
-public class TestCase extends BasicFadeyScene {
+public class TestCase extends BasicScene {
 
 
     private TestAssets assets;
-    private Retron retron;
+    private RetronOld retron;
     private RetronDummy logo;
     private SpriteBatch batch;
     private OrthographicCamera camera;
     private HUD hud;
 
     @Override
-    public void show() {
+    public void start() {
         super.show();
 
         assets.resolveAssets();
 
-        retron = new Retron( 1f/60f , 320, 200);
+        retron = new RetronOld( 1f/60f , 320, 200);
         retron.setBackground(1f,1f,1f);
 
         wrangler.add(retron);

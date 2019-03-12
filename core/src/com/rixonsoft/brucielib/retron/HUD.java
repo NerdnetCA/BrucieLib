@@ -8,7 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.rixonsoft.brucielib.BrucieGame;
-import com.rixonsoft.brucielib.Wrangled;
+import com.rixonsoft.brucielib.scene.Wrangled;
 
 public class HUD implements Wrangled, Disposable {
 
