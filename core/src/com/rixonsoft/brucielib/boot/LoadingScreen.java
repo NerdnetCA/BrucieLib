@@ -24,8 +24,7 @@ public class LoadingScreen extends BasicScene {
     private float myX, myY;
 
     @Override
-    public void show() {
-        super.show();
+    public void start() {
         Gdx.app.log(TAG,"Show loading screen");
         AssetManager am = myGame.assetManager;
         loadingImg = am.get(BrucieConfig.loading_img,Texture.class);

@@ -6,26 +6,33 @@ import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.glutils.*;
 import com.badlogic.gdx.utils.Disposable;
 
-public class Retron implements Disposable {
 
+public class RetronOld implements Disposable {
+    private static final String TAG = "RETRON";
+
+
+    // Parameters
     private final float timestep;
     private final int width, height;
 
+    // Properties
     private float bgRed, bgBlue, bgGreen;
     private boolean smooth = true;
 
+    // Root of the scene hierarchy
     public final RetronEntity root;
 
+    // Internals
     private final OrthographicCamera camera;
     private final OrthographicCamera flipCamera;
-    private final SpriteBatch batch;
+    private final SpriteBatch bufferBatch;
     private final SpriteBatch filterBatch;
     private final FrameBuffer framebuffer;
     private final DisplayFilter displayFilter;
 
     private float accumulator;
 
-    public Retron(float timestep, int width, int height) {
+    public RetronOld(float timestep, int width, int height) {
         this.timestep = timestep;
         this.width = width;
         this.height = height;
@@ -44,20 +51,24 @@ public class Retron implements Disposable {
         flipCamera = new OrthographicCamera();
         flipCamera.setToOrtho(false,width,height);
 
-        // Main rendering batch
-        batch = new SpriteBatch();
-        batch.setProjectionMatrix(camera.combined);
+        // Main rendering bufferBatch
+        bufferBatch = new SpriteBatch();
+        bufferBatch.setProjectionMatrix(camera.combined);
 
         // OpenGL shader for filtering the framebuffer when rendering to display
-        displayFilter = new DisplayFilter("brucie/glsl/vert_nul.glsl",
-                "brucie/glsl/frag_retron.glsl");
+        displayFilter = new DisplayFilter();
         // Batch for above
         filterBatch = new SpriteBatch();
         filterBatch.setProjectionMatrix(flipCamera.combined);
         filterBatch.setShader(displayFilter.getShaderProgram());
 
         // Set default filter parameters
-        displayFilter.setBrite(1.5f);
+        displayFilter.setBrite(1.4f);
+        displayFilter.setSaturation(0.8f);
+    }
+
+    public DisplayFilter getDisplayFilter() {
+        return displayFilter;
     }
 
     /** Set smoothing option : smoothed or pixellated.
@@ -101,9 +112,9 @@ public class Retron implements Disposable {
         framebuffer.begin();
         Gdx.gl20.glClearColor(bgRed,bgGreen,bgBlue,1f);
         Gdx.gl20.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        batch.begin();
-        root.draw(batch, 1f);
-        batch.end();
+        bufferBatch.begin();
+        root.draw(bufferBatch, 1f);
+        bufferBatch.end();
         framebuffer.end();
 
     }
@@ -126,7 +137,7 @@ public class Retron implements Disposable {
         return framebuffer.getColorBufferTexture();
     }
 
-    /** Set background colour of this Retron.
+    /** Set background colour of this RetronOld.
      *
      * The retron will clear its frame buffer with this colour on each draw.
      *
@@ -145,12 +156,12 @@ public class Retron implements Disposable {
 
     @Override
     public void dispose() {
-        if(batch != null) batch.dispose();
+        if(bufferBatch != null) bufferBatch.dispose();
         if(framebuffer != null) framebuffer.dispose();
         if(filterBatch != null) filterBatch.dispose();
         if(displayFilter != null) displayFilter.dispose();
     }
 
-    private static final String TAG = "RETRON";
+    //private static final String TAG = "RETRON";
 
 }

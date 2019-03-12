@@ -13,6 +13,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.rixonsoft.brucielib.boot.LoadingScreen;
 import com.rixonsoft.brucielib.boot.SplashScreen;
+import com.rixonsoft.brucielib.scene.Scene;
 
 public abstract class BrucieGame implements ApplicationListener {
     private static final String TAG = "BRUCIEGAME";

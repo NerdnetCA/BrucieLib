@@ -1,8 +1,9 @@
-package com.rixonsoft.brucielib;
+package com.rixonsoft.brucielib.scene;
 
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.utils.Disposable;
+import com.rixonsoft.brucielib.BrucieGame;
 
 /** Interface for all game scenes.
  *
@@ -18,6 +19,8 @@ public interface Scene extends Screen, Disposable {
     public boolean isDone();
 
     /** Called by the engine when creating the scene.
+     *
+     * Absolutely MUST be called right after being constructed.
      *
      * @param game
      */

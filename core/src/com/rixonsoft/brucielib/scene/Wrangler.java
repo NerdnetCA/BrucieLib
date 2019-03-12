@@ -1,9 +1,10 @@
-package com.rixonsoft.brucielib;
+package com.rixonsoft.brucielib.scene;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
+import com.rixonsoft.brucielib.BrucieGame;
 
 /** Wrangler is a tool to help initialize and manage complex game objects.
  *
@@ -48,6 +49,7 @@ public class Wrangler implements Disposable {
             Gdx.app.log(TAG,"IllegalAccessException wrangling "+type.getCanonicalName());
         } catch (InstantiationException e) {
             Gdx.app.log(TAG,"InstantiationException wrangling "+type.getCanonicalName());
+            e.printStackTrace();
         }
         return null;
     }

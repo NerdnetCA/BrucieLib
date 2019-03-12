@@ -63,6 +63,12 @@ com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
 
     },
 
+    roundcheck: {
+       down: button_round_down,
+       up: checkbox_on,
+       disabled: button_round_disabled
+    }
+
     toggle: {
         up: button_toggle_up,
         down: button_toggle_down,
