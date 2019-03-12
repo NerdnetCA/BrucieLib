@@ -12,9 +12,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.rixonsoft.brucielib.BasicFadeyScene;
+import com.rixonsoft.brucielib.BasicScene;
 
-public class TestScene extends BasicFadeyScene {
+public class TestScene extends BasicScene {
     private static final String TAG = "TESTSCENE";
     private TestBundle bundle;
 
@@ -27,14 +27,12 @@ public class TestScene extends BasicFadeyScene {
 
     @Override
     public void preload() {
-        bundle = wrangler.wrangle(TestBundle.class);
+        bundle = wrangleAssetBag(TestBundle.class);
         Gdx.app.log(TAG,"loading bundle");
     }
 
     @Override
-    public void show() {
-        super.show();
-
+    public void start() {
         Gdx.app.log(TAG,"showing scene");
 
         bundle.resolveAssets();

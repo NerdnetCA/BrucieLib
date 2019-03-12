@@ -8,6 +8,7 @@ import com.badlogic.gdx.ai.msg.Telegram;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.rixonsoft.brucielib.scene.AbstractScene;
 
 /**
  * Utility Scene class, providing simple fade in and fade out.
@@ -16,12 +17,12 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
  */
 
 
-public abstract class BasicFadeyScene extends AbstractScene {
-    private static final String TAG = "BASICFADEYSCENE";
+public abstract class BasicScene extends AbstractScene {
+    private static final String TAG = "BASICSCENE";
 
     public static final float WIPE_TIME = 0.9f;
 
-    protected StateMachine<BasicFadeyScene, BasicFadeyState> stateMachine;
+    protected StateMachine<BasicScene, BasicFadeyState> stateMachine;
 
     private ShapeRenderer fadeRenderer;
     private OrthographicCamera mCamera;
@@ -31,12 +32,13 @@ public abstract class BasicFadeyScene extends AbstractScene {
     public float wipeTime;
 
     public void show() {
+        super.show();
         wipeSpeedFactor = 1f/WIPE_TIME;
         mCamera = new OrthographicCamera();
         mCamera.setToOrtho(false,mWidth,mHeight);
         mCamera.update();
         fadeRenderer = new ShapeRenderer();
-        stateMachine = new DefaultStateMachine<BasicFadeyScene, BasicFadeyState>(this, BasicFadeyState.FADEIN);
+        stateMachine = new DefaultStateMachine<BasicScene, BasicFadeyState>(this, BasicFadeyState.FADEIN);
         beginFade();
     }
 
@@ -84,7 +86,10 @@ public abstract class BasicFadeyScene extends AbstractScene {
         stateMachine.changeState(BasicFadeyState.FADEOUT);
     }
 
-    public static enum BasicFadeyState implements State<BasicFadeyScene> {
+    public void pause() {}
+    public void resume() {}
+
+    public static enum BasicFadeyState implements State<BasicScene> {
         FADEIN() {
             @Override
             public float getFadeValue(float time) {
@@ -93,13 +98,13 @@ public abstract class BasicFadeyScene extends AbstractScene {
             }
 
             @Override
-            public void enter(BasicFadeyScene entity) {
+            public void enter(BasicScene entity) {
                 Gdx.app.log(TAG,"Entering fadein");
                 entity.beginFade();
             }
 
             @Override
-            public void update(BasicFadeyScene entity) {
+            public void update(BasicScene entity) {
                 super.update(entity);
                 if(entity.renderFade(Gdx.graphics.getDeltaTime())) {
                     entity.stateMachine.changeState(BasicFadeyState.NORMAL_RUN);
@@ -109,12 +114,12 @@ public abstract class BasicFadeyScene extends AbstractScene {
 
         FADEOUT() {
             @Override
-            public void enter(BasicFadeyScene entity) {
+            public void enter(BasicScene entity) {
                 entity.beginFade();
             }
 
             @Override
-            public void update(BasicFadeyScene entity) {
+            public void update(BasicScene entity) {
                 super.update(entity);
                 if(entity.renderFade(Gdx.graphics.getDeltaTime())) {
                     entity.setDone(true);
@@ -129,7 +134,7 @@ public abstract class BasicFadeyScene extends AbstractScene {
                 return 1.0f;
             }
             @Override
-            public void update(BasicFadeyScene entity) {
+            public void update(BasicScene entity) {
                 super.update(entity);
                 entity.renderFade(Gdx.graphics.getDeltaTime());
             }
@@ -141,22 +146,22 @@ public abstract class BasicFadeyScene extends AbstractScene {
         private static final String TAG="SCENESTATE";
 
         @Override
-        public void enter(BasicFadeyScene entity) {
+        public void enter(BasicScene entity) {
 
         }
 
         @Override
-        public void update(BasicFadeyScene entity) {
+        public void update(BasicScene entity) {
             entity.draw(Gdx.graphics.getDeltaTime());
         }
 
         @Override
-        public void exit(BasicFadeyScene entity) {
+        public void exit(BasicScene entity) {
 
         }
 
         @Override
-        public boolean onMessage(BasicFadeyScene entity, Telegram telegram) {
+        public boolean onMessage(BasicScene entity, Telegram telegram) {
             return false;
         }
 

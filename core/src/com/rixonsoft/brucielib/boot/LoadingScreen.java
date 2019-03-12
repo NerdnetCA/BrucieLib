@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.rixonsoft.brucielib.BasicFadeyScene;
+import com.rixonsoft.brucielib.BasicScene;
 import com.rixonsoft.brucielib.BrucieConfig;
 
 /**
@@ -14,7 +14,7 @@ import com.rixonsoft.brucielib.BrucieConfig;
  *
  */
 
-public class LoadingScreen extends BasicFadeyScene {
+public class LoadingScreen extends BasicScene {
     private static final String TAG="LOADINGSCREEN";
 
     private Texture loadingImg;

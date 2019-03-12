@@ -22,7 +22,7 @@ public abstract class BrucieGame implements ApplicationListener {
     public BrucieConfig brucieConfig;
     public AssetManager assetManager;
 
-    // BasicFadeyScene management
+    // BasicScene management
     protected com.rixonsoft.brucielib.boot.SplashScreen splashScene;
     protected Scene currentScene, nextScene;
 
