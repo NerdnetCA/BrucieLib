@@ -24,14 +24,10 @@ public class RetronDummy extends RetronEntity {
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-
         //if (true) applyTransform(batch, computeTransform());
         batch.draw(texture,getX(),getY(), getOriginX(), getOriginY(), getWidth(), getHeight(),
                 getScaleX(), getScaleY(), getRotation());
         //if (true) resetTransform(batch);
-
-
-
     }
 
 
