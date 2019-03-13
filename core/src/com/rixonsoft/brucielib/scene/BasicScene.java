@@ -1,4 +1,4 @@
-package com.rixonsoft.brucielib;
+package com.rixonsoft.brucielib.scene;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ai.fsm.DefaultStateMachine;
@@ -8,7 +8,6 @@ import com.badlogic.gdx.ai.msg.Telegram;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.rixonsoft.brucielib.scene.AbstractScene;
 
 /**
  * Utility Scene class, providing simple fade in and fade out.

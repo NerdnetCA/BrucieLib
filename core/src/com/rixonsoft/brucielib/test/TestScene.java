@@ -12,7 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.rixonsoft.brucielib.BasicScene;
+import com.rixonsoft.brucielib.scene.BasicScene;
 
 public class TestScene extends BasicScene {
     private static final String TAG = "TESTSCENE";

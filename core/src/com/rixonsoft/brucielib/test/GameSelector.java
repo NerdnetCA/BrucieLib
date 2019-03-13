@@ -1,6 +1,7 @@
 package com.rixonsoft.brucielib.test;
 
 import com.rixonsoft.brucielib.BrucieGame;
+import com.rixonsoft.brucielib.dgen.DGenScene;
 import com.rixonsoft.brucielib.scene.MinimalScene;
 import com.rixonsoft.brucielib.scene.Scene;
 
@@ -17,7 +18,7 @@ public class GameSelector extends BrucieGame {
 	public void create () {
 		super.create();
 
-		Scene boot;
+		Scene boot = new TestScene();
 		switch(appNum) {
 			case 0:
 				boot = new TestScene();
@@ -25,17 +26,19 @@ public class GameSelector extends BrucieGame {
 			case 1:
 				boot = new MinimalScene();
 				break;
-/*
 			case 2:
-				boot = new TestShooter();
+				//boot = new TestShooter();
 				break;
 			case 3:
-				boot = new PlatScene();
+				//boot = new PlatScene();
 				break;
 			case 4:
-				boot = new BFlatGameScene();
+				//boot = new BFlatGameScene();
 				break;
-*/
+			case 5:
+				boot = new DGenScene();
+				break;
+
 			default:
 				boot = new TestScene();
 				break;

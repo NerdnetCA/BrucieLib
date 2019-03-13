@@ -1,7 +1,5 @@
 package com.rixonsoft.brucielib.scene;
 
-import com.rixonsoft.brucielib.BasicScene;
-
 public class SettingsScene extends BasicScene {
 
 

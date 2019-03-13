@@ -6,8 +6,8 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.rixonsoft.brucielib.BasicScene;
 import com.rixonsoft.brucielib.BrucieConfig;
+import com.rixonsoft.brucielib.scene.BasicScene;
 
 /**
  * As with SplashScreen, it is best to keep out of this and accept that it works. :)
