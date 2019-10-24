@@ -1,7 +1,7 @@
 package com.rixonsoft.brucielib.test;
 
 import com.rixonsoft.brucielib.BrucieGame;
-import com.rixonsoft.brucielib.dgen.DGenScene;
+//import com.rixonsoft.brucielib.dgen.DGenScene;
 import com.rixonsoft.brucielib.scene.MinimalScene;
 import com.rixonsoft.brucielib.scene.Scene;
 
@@ -36,7 +36,7 @@ public class GameSelector extends BrucieGame {
 				//boot = new BFlatGameScene();
 				break;
 			case 5:
-				boot = new DGenScene();
+				//boot = new DGenScene();
 				break;
 
 			default:
