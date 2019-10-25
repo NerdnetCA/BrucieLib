@@ -1,10 +1,14 @@
 package com.rixonsoft.brucielib.test;
 
 import com.rixonsoft.brucielib.BrucieGame;
-//import com.rixonsoft.brucielib.dgen.DGenScene;
 import com.rixonsoft.brucielib.scene.MinimalScene;
 import com.rixonsoft.brucielib.scene.Scene;
 
+/** GameSelector is an example wrapper for the starting scene of the game.
+ *
+ * A Scene is instantiated based on command-line parameters, and passed to
+ * the bootScene() method of
+ */
 public class GameSelector extends BrucieGame {
 
 

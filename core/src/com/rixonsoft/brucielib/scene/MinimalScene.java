@@ -6,6 +6,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.rixonsoft.brucielib.*;
 
+/** Compact Scene example.
+ *
+ * See test.TestScene for a more verbose example.
+ */
 public class MinimalScene extends BasicScene {
 
     private MinimalSceneAssets assets;

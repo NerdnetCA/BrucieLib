@@ -38,10 +38,8 @@ public class Wrangler implements Disposable {
             T o = type.newInstance();
             if(o instanceof Wrangled) {
                 ((Wrangled)o).setGame(brucieGame);
-                if (o instanceof Disposable) {
-                    disposables.add((Disposable)o);
-                }
-            } else if(o instanceof  Disposable) {
+            }
+            if(o instanceof  Disposable) {
                 disposables.add((Disposable)o);
             }
             return o;

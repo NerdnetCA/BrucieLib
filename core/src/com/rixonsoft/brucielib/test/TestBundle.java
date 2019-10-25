@@ -4,6 +4,17 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.rixonsoft.brucielib.AssetBag;
 
+/** Example AssetBag.
+ *
+ * 1. Create constant fields containing asset path names.
+ *
+ * 2. Create fields to hold instance references to your assets.
+ *
+ * 3. Implement resolveAssets() to fill in the instance fields.
+ *
+ * 4. Implement queueAssets() to load your assets via AssetManager.
+ *
+ */
 public class TestBundle extends AssetBag {
 
     private static final String DEFAULTSKIN = "brucie/ui/cuticle_alphablue.json";
