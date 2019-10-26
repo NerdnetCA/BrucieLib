@@ -19,3 +19,18 @@ In the brucielib package, examine the following files:
   * test/TestScene
   * test/TestBundle
   * AssetBag
+
+## Contributors:
+
+Please add:
+```
+    private static final String TAG = "<YOURCLASSNAME>";
+```
+to all classes with nontrivial code.
+
+Thereafter, use:
+```
+    Gdx.app.log(TAG,"log message");
+```
+to log messages to the application log.
+
