@@ -12,7 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.rixonsoft.brucielib.scene.BasicScene;
+import com.rixonsoft.brucielib.core.scene.BasicScene;
 
 /** Example scene.
  *

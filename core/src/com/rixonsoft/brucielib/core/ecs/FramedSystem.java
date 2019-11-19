@@ -1,4 +1,4 @@
-package com.rixonsoft.brucielib.ecs;
+package com.rixonsoft.brucielib.core.ecs;
 
 import com.badlogic.ashley.core.EntitySystem;
 
@@ -18,6 +18,9 @@ public abstract class FramedSystem extends EntitySystem {
     private final float timestep;
     private float accumulator;
 
+    /**
+     *  Default Constructor
+     */
     public FramedSystem() {
         this(DEFAULT_TIMESTEP);
     }
@@ -29,6 +32,10 @@ public abstract class FramedSystem extends EntitySystem {
         this.timestep = timestep;
     }
 
+    /** Called by Ashley to update the system every frame
+     *
+     * @param delta time elapsed since last frame.
+     */
     public void update(float delta) {
         accumulator += delta;
         while (accumulator > timestep) {

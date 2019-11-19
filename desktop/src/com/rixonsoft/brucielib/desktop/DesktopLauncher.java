@@ -3,8 +3,11 @@ package com.rixonsoft.brucielib.desktop;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.rixonsoft.brucielib.BrucieConfig;
-import com.rixonsoft.brucielib.test.GameSelector;
+import com.rixonsoft.brucielib.core.boot.GameSelector;
 
+/** DesktopLauncher is not much changed from the template default.
+ *
+ */
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
