@@ -1,28 +1,19 @@
-package com.rixonsoft.brucielib.ecs;
+package com.rixonsoft.brucielib.tufree;
 
-import com.badlogic.ashley.core.*;
+import com.badlogic.ashley.core.Entity;
+import com.badlogic.ashley.core.PooledEngine;
 import com.rixonsoft.brucielib.core.ecs.component.OrthoCameraComponent;
 
-public class RetronEngine {
-
+public class TufreeEngine {
     private final PooledEngine engine;
 
-    public RetronEngine() {
-
+    public TufreeEngine() {
         engine = new PooledEngine();
-
-        addCamera();
+        Entity cam = engine.createEntity();
+        cam.add(engine.createComponent(OrthoCameraComponent.class));
     }
 
     public void update(float delta) {
 
     }
-
-    public void addCamera() {
-        Entity cam = engine.createEntity();
-        cam.add(engine.createComponent(OrthoCameraComponent.class));
-
-
-    }
-
 }

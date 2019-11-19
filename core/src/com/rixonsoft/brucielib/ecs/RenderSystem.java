@@ -5,8 +5,8 @@ import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.SortedIteratingSystem;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
-import com.rixonsoft.brucielib.ecs.component.InterpolationComponent;
-import com.rixonsoft.brucielib.ecs.component.PositionComponent;
+import com.rixonsoft.brucielib.core.ecs.component.Interpolation2Component;
+import com.rixonsoft.brucielib.core.ecs.component.Position2Component;
 import com.rixonsoft.brucielib.ecs.component.RenderableComponent;
 import com.rixonsoft.brucielib.ecs.component.SpriteComponent;
 import com.rixonsoft.brucielib.ecs.component.TiledMapComponent;
@@ -21,7 +21,7 @@ public class RenderSystem extends SortedIteratingSystem {
 
     public RenderSystem(int width, int height, int priority) {
         super(
-                Family.all(RenderableComponent.class, PositionComponent.class)
+                Family.all(RenderableComponent.class, Position2Component.class)
                         .one(SpriteComponent.class, TiledMapComponent.class)
                         .get(),
                 new MyComparator(),
@@ -43,8 +43,8 @@ public class RenderSystem extends SortedIteratingSystem {
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
         SpriteComponent spriteComponent = Mappers.cm_sprite.get(entity);
-        PositionComponent positionComponent = Mappers.cm_position.get(entity);
-        InterpolationComponent interpolationComponent = Mappers.cm_interpolation.get(entity);
+        Position2Component position2Component = Mappers.cm_position.get(entity);
+        Interpolation2Component interpolationComponent = Mappers.cm_interpolation.get(entity);
         TiledMapComponent mapComponent = Mappers.cm_map.get(entity);
 
         if(spriteComponent != null) {

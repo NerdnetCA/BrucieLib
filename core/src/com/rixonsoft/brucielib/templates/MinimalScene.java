@@ -1,6 +1,5 @@
-package com.rixonsoft.brucielib.test;
+package com.rixonsoft.brucielib.templates;
 
-import com.badlogic.ashley.core.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -8,11 +7,16 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.rixonsoft.brucielib.*;
 import com.rixonsoft.brucielib.core.scene.BasicScene;
 
-public class PlatformerScene extends BasicScene {
-    private MyAssets assets;
-    private SpriteBatch batch;
+/** Example scene
+ *
+ */
+public class MinimalScene extends BasicScene {
 
-    private PooledEngine engine;
+    // Instance for storing asset references.  See inner class definition below.
+    private MinimalSceneAssets assets;
+
+    // SpriteBatches are used to manage 2d rendering in LibGDX
+    private SpriteBatch batch;
 
     @Override
     public void draw(float delta) {
@@ -25,19 +29,15 @@ public class PlatformerScene extends BasicScene {
 
     @Override
     public void preload() {
-        assets = wrangleAssetBag(MyAssets.class);
+        assets = wrangleAssetBag(MinimalSceneAssets.class);
     }
 
     public void start() {
         batch = wrangle(SpriteBatch.class);
-
-        engine = new PooledEngine();
-
-
     }
 
 
-    public static class MyAssets extends AssetBag {
+    public static class MinimalSceneAssets extends AssetBag {
         public static final String LOGO = "brucie/logo.png";
 
         Texture logo;

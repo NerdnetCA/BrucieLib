@@ -10,7 +10,7 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.rixonsoft.brucielib.BrucieGame;
-import com.rixonsoft.brucielib.scene.Wrangled;
+import com.rixonsoft.brucielib.core.scene.Wrangled;
 
 public class HUD implements Wrangled, Disposable {
 

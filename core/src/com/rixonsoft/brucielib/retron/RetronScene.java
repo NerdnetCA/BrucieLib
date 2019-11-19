@@ -3,7 +3,7 @@ package com.rixonsoft.brucielib.retron;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.rixonsoft.brucielib.scene.BasicScene;
+import com.rixonsoft.brucielib.core.scene.BasicScene;
 
 public abstract class RetronScene extends BasicScene {
 

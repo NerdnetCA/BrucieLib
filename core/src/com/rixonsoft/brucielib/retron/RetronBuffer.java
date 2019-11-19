@@ -8,8 +8,6 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.utils.Disposable;
-import com.rixonsoft.brucielib.BrucieGame;
-import com.rixonsoft.brucielib.scene.Wrangled;
 
 public class RetronBuffer implements Disposable {
 

@@ -4,10 +4,10 @@ import com.badlogic.ashley.core.*;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Pools;
-import com.rixonsoft.brucielib.ecs.FrameInterpolatedSystem;
+import com.rixonsoft.brucielib.ecs.FramedSystem;
 import com.rixonsoft.brucielib.test.shooter.components.*;
 
-public class MotionSystem extends FrameInterpolatedSystem {
+public class MotionSystem extends FramedSystem {
 
     private static final float BRAKE_VALUE = 80f;
     private ImmutableArray<Entity> entities;

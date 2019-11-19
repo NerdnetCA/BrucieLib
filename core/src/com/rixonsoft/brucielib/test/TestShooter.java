@@ -1,20 +1,17 @@
 package com.rixonsoft.brucielib.test;
 
-import com.badlogic.ashley.core.Component;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.PooledEngine;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.rixonsoft.brucielib.AssetBag;
 import com.rixonsoft.brucielib.retron.RetronBatch;
-import com.rixonsoft.brucielib.scene.BasicScene;
+import com.rixonsoft.brucielib.core.scene.BasicScene;
 import com.rixonsoft.brucielib.input.DefaultPad;
 import com.rixonsoft.brucielib.test.shooter.components.InputComponent;
 import com.rixonsoft.brucielib.test.shooter.components.PlayerComponent;
 import com.rixonsoft.brucielib.test.shooter.components.PositionComponent;
-import com.rixonsoft.brucielib.test.shooter.components.RemovableComponent;
 import com.rixonsoft.brucielib.test.shooter.components.SpriteComponent;
 import com.rixonsoft.brucielib.test.shooter.components.ThrustComponent;
 import com.rixonsoft.brucielib.test.shooter.components.VelocityComponent;

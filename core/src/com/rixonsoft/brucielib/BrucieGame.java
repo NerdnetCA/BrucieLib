@@ -11,9 +11,9 @@ import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.rixonsoft.brucielib.boot.LoadingScreen;
-import com.rixonsoft.brucielib.boot.SplashScreen;
-import com.rixonsoft.brucielib.scene.Scene;
+import com.rixonsoft.brucielib.core.boot.LoadingScreen;
+import com.rixonsoft.brucielib.core.boot.SplashScreen;
+import com.rixonsoft.brucielib.core.scene.Scene;
 
 public abstract class BrucieGame implements ApplicationListener {
     private static final String TAG = "BRUCIEGAME";
@@ -24,7 +24,7 @@ public abstract class BrucieGame implements ApplicationListener {
     public AssetManager assetManager;
 
     // BasicScene management
-    protected com.rixonsoft.brucielib.boot.SplashScreen splashScene;
+    protected com.rixonsoft.brucielib.core.boot.SplashScreen splashScene;
     protected Scene currentScene, nextScene;
 
     protected StateMachine<BrucieGame, GameState> gameStateMachine;
