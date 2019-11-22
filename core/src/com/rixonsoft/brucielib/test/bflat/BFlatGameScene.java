@@ -11,12 +11,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.rixonsoft.brucielib.AssetBag;
+import com.rixonsoft.brucielib.core.AssetBag;
 import com.rixonsoft.brucielib.test.bflat.component.*;
 import com.rixonsoft.brucielib.test.bflat.map.MapReader;
 import com.rixonsoft.brucielib.test.bflat.system.*;
-import com.rixonsoft.brucielib.input.DefaultPad;
-import com.rixonsoft.brucielib.retron.DisplayFilter;
+import com.rixonsoft.brucielib.tufree.input.DefaultPad;
+import com.rixonsoft.brucielib.tufree.retron.DisplayFilter;
 import com.rixonsoft.brucielib.core.scene.BasicScene;
 
 

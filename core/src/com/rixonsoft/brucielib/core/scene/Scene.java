@@ -3,7 +3,7 @@ package com.rixonsoft.brucielib.core.scene;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.utils.Disposable;
-import com.rixonsoft.brucielib.BrucieGame;
+import com.rixonsoft.brucielib.core.BrucieGame;
 
 /** Interface for all game scenes.
  *

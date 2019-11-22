@@ -2,7 +2,7 @@ package com.rixonsoft.brucielib.test;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.rixonsoft.brucielib.AssetBag;
+import com.rixonsoft.brucielib.core.AssetBag;
 
 /** Example AssetBag.
  *

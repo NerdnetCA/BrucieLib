@@ -3,17 +3,10 @@ package com.rixonsoft.brucielib.test.shooter.systems;
 import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
-import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
-import com.badlogic.ashley.utils.ImmutableArray;
-import com.badlogic.gdx.Gdx;
-import com.rixonsoft.brucielib.input.PadControllable;
+import com.rixonsoft.brucielib.tufree.input.PadControllable;
 import com.rixonsoft.brucielib.test.shooter.components.InputComponent;
-import com.rixonsoft.brucielib.test.shooter.components.PlayerComponent;
-import com.rixonsoft.brucielib.test.shooter.components.RemovableComponent;
-import com.rixonsoft.brucielib.test.shooter.components.ThrustComponent;
-import com.rixonsoft.brucielib.test.shooter.components.VelocityComponent;
 
 public class InputSystem extends IteratingSystem implements PadControllable {
 
@@ -67,7 +60,7 @@ public class InputSystem extends IteratingSystem implements PadControllable {
     }
 
     @Override
-    public void buttonEsc(boolean down) {
+    public void buttonStart(boolean down) {
         pressingEsc = down;
     }
 

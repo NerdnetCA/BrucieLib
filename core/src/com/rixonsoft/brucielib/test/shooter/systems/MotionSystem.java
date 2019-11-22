@@ -4,7 +4,7 @@ import com.badlogic.ashley.core.*;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Pools;
-import com.rixonsoft.brucielib.ecs.FramedSystem;
+import com.rixonsoft.brucielib.core.ecs.FramedSystem;
 import com.rixonsoft.brucielib.test.shooter.components.*;
 
 public class MotionSystem extends FramedSystem {

@@ -2,10 +2,11 @@ package com.rixonsoft.brucielib.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.rixonsoft.brucielib.BrucieConfig;
-import com.rixonsoft.brucielib.core.boot.GameSelector;
+import com.rixonsoft.brucielib.core.BrucieConfig;
+import com.rixonsoft.brucielib.core.GameSelector;
 
-/** DesktopLauncher is not much changed from the template default.
+/** DesktopLauncher is responsible for launching the game on
+ * the desktop platform.
  *
  */
 public class DesktopLauncher {
@@ -28,6 +29,7 @@ public class DesktopLauncher {
 		}
 
 		// Create game instance and give it the parameter.
+		// See GameSelector class next.
 		GameSelector t = new GameSelector();
 		t.setAppNum(dnum);
 

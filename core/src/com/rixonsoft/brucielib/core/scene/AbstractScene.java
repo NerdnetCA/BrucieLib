@@ -2,8 +2,8 @@ package com.rixonsoft.brucielib.core.scene;
 
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
-import com.rixonsoft.brucielib.AssetBag;
-import com.rixonsoft.brucielib.BrucieGame;
+import com.rixonsoft.brucielib.core.AssetBag;
+import com.rixonsoft.brucielib.core.BrucieGame;
 
 /** Bare-bones implementation of a Scene.
  *

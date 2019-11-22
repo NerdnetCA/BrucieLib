@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.rixonsoft.brucielib.BrucieConfig;
+import com.rixonsoft.brucielib.core.BrucieConfig;
 import com.rixonsoft.brucielib.core.scene.BasicScene;
 
 /**

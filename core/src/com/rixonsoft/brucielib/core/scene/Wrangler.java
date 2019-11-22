@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
-import com.rixonsoft.brucielib.BrucieGame;
+import com.rixonsoft.brucielib.core.BrucieGame;
 
 /** Wrangler is a tool to help initialize and manage complex game objects.
  *
@@ -28,7 +28,7 @@ public class Wrangler implements Disposable {
 
     /** Initialize an instance of the given class.
      *
-     * If the class implements Wrangled, call the new object's setGame method.
+     * If the class implements BrucieGlobal, call the new object's setGame method.
      *
      * If the class implements Disposable, add it to internal list of disposables,
      * to be freed when the wrangler itself is disposed.
@@ -36,8 +36,8 @@ public class Wrangler implements Disposable {
     public <T> T wrangle(Class<T> type) {
         try {
             T o = type.newInstance();
-            if(o instanceof Wrangled) {
-                ((Wrangled)o).setGame(brucieGame);
+            if(o instanceof BrucieGlobal) {
+                ((BrucieGlobal)o).setGame(brucieGame);
             }
             if(o instanceof  Disposable) {
                 disposables.add((Disposable)o);

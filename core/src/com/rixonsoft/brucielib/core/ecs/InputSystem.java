@@ -1,26 +1,26 @@
-package com.rixonsoft.brucielib.test.bflat.system;
+package com.rixonsoft.brucielib.core.ecs;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
-import com.rixonsoft.brucielib.test.bflat.Mappers;
-import com.rixonsoft.brucielib.test.bflat.component.*;
+import com.rixonsoft.brucielib.core.ecs.component.InputComponent;
+import com.rixonsoft.brucielib.tufree.ecs.Mappers;
 import com.rixonsoft.brucielib.tufree.input.PadControllable;
 
-public class InputSys extends IteratingSystem implements PadControllable {
-    private boolean lefting, righting, upping, downing, shootingA, shootingB, shootingC, pressingEsc;
+public class InputSystem extends IteratingSystem implements PadControllable {
+    private boolean lefting, righting, upping, downing, shootingA, shootingB, shootingC, pressingStart;
 
-    public InputSys() {
+    public InputSystem() {
         this(0);
     }
-    public InputSys(int priority) {
-        super(Family.all(CInput.class).get(),priority);
+    public InputSystem(int priority) {
+        super(Family.all(InputComponent.class).get(),priority);
     }
 
     @Override
     public void reset() {
-        lefting = righting = shootingA = shootingB = shootingC = pressingEsc = upping = downing = false;
+        lefting = righting = shootingA = shootingB = shootingC = pressingStart = upping = downing = false;
     }
 
     @Override
@@ -58,7 +58,7 @@ public class InputSys extends IteratingSystem implements PadControllable {
 
     @Override
     public void buttonStart(boolean down) {
-        pressingEsc = down;
+        pressingStart = down;
     }
 
     @Override
@@ -66,18 +66,15 @@ public class InputSys extends IteratingSystem implements PadControllable {
         super.addedToEngine(engine);
     }
 
-    public void update(float delta) {
-        super.update(delta);
-    }
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
-        CInput input = Mappers.cm_input.get(entity);
+        InputComponent input = Mappers.cm_input.get(entity);
 
         input.axisY = upping ? 1 : downing ? -1 : 0;
         input.axisX = righting ? 1 : lefting ? -1 : 0;
         input.buttonA = shootingA;
         input.buttonB = shootingB;
         input.buttonC = shootingC;
-        input.buttonStart = pressingEsc;
+        input.buttonStart = pressingStart;
     }
 }
